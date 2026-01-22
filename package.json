@@ -6,13 +6,17 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "prettier-plugin-sh": "^0.18.0",
-    "prettier-plugin-toml": "^2.0.6"
+    "prettier-plugin-toml": "^2.0.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@github/copilot": "^0.0.391",
+    "commander": "^14.0.2",
     "octokit": "^5.0.5"
   },
   "scripts": {
+    "test": "vitest run",
     "setup": "pip install -r requirements.txt && git config core.hooksPath .config/git/hooks"
   }
 }
