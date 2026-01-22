@@ -1,5 +1,10 @@
 {
   "name": "commit-scribe",
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Caleb Cushing",
+    "email": "caleb.cushing@gmail.com"
+  },
   "packageManager": "yarn@4.12.0",
   "devDependencies": {
     "git-conventional-commits": "^2.8.0",

@@ -6,6 +6,9 @@
 "*.ts":
   - "reuse annotate --license 'GPL-3.0-or-later' --copyright 'Caleb Cushing' --copyright-prefix spdx-string-symbol --merge-copyrights"
   - &prettier "prettier --cache --ignore-unknown --write"
+"package.json":
+  - "reuse annotate --license 'MIT' --copyright 'Caleb Cushing' --copyright-prefix spdx-string-symbol --merge-copyrights --force-dot-license"
+  - *prettier
 "Makefile":
   - "reuse annotate --license 'MIT' --copyright 'Caleb Cushing' --copyright-prefix spdx-string-symbol --merge-copyrights"
 "{.config/git/hooks/*,*.sh}":
