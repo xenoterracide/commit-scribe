@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: Copyright © 2026 Caleb Cushing
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: build
+on: [push, workflow_call]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+          filter: "blob:none"
+          fetch-depth: 0
+      - uses: actions/setup-node@v6.2.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: corepack enable
+      - uses: actions/setup-node@v6.2.0
+        with:
+          node-version: 24
+          cache: "yarn"
+      - run: yarn install --immutable --inline-builds --check-resolutions
+      - run: yarn test
