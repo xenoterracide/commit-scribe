@@ -6,7 +6,9 @@
     "email": "caleb.cushing@gmail.com"
   },
   "packageManager": "yarn@4.12.0",
+  "type": "commonjs",
   "devDependencies": {
+    "@types/node": "^25.0.10",
     "git-conventional-commits": "^2.8.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
@@ -17,10 +19,15 @@
   },
   "dependencies": {
     "@github/copilot": "^0.0.391",
-    "commander": "^14.0.2",
+    "clipanion": "^4.0.0-rc.4",
     "octokit": "^5.0.5"
   },
+  "bin": {
+    "scribe": "./dist/cli/index.js"
+  },
   "scripts": {
+    "scribe": "node ./dist/cli/index.js",
+    "compile": "tsc",
     "test": "vitest run",
     "setup": "pip install -r requirements.txt && git config core.hooksPath .config/git/hooks"
   }
