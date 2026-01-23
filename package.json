@@ -6,7 +6,7 @@
     "email": "caleb.cushing@gmail.com"
   },
   "packageManager": "yarn@4.12.0",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^25.0.10",
     "git-conventional-commits": "^2.8.0",
@@ -14,6 +14,7 @@
     "prettier": "^3.8.1",
     "prettier-plugin-sh": "^0.18.0",
     "prettier-plugin-toml": "^2.0.6",
+    "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
@@ -27,7 +28,8 @@
   },
   "scripts": {
     "scribe": "node ./dist/cli/index.js",
-    "compile": "tsc",
+    "build": "tsc --build --verbose",
+    "clean": "rimraf ./dist",
     "test": "vitest run",
     "setup": "pip install -r requirements.txt && git config core.hooksPath .config/git/hooks"
   }

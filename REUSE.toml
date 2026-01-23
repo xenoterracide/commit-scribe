@@ -16,3 +16,7 @@ SPDX-License-Identifier = "CC0-1.0"
 path = ".tool-versions"
 SPDX-FileCopyrightText = "NONE"
 SPDX-License-Identifier = "CC0-1.0"
+[[annotations]]
+path = ".yarn/**"
+SPDX-FileCopyrightText = "Copyright (c) 2016-present, Yarn Contributors. All rights reserved."
+SPDX-License-Identifier = "BSD-2-Clause"
