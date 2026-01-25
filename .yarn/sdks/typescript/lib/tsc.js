@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-// SPDX-FileCopyrightText: Copyright © 2026 Caleb Cushing
-//
-// SPDX-License-Identifier: CC0-1.0
-
 const {existsSync} = require(`fs`);
 const {createRequire, register} = require(`module`);
 const {resolve} = require(`path`);
