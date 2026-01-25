@@ -6,13 +6,9 @@ const prettier = "prettier --cache --ignore-unknown --write";
 const reuse =
   "reuse annotate --copyright 'Caleb Cushing' --copyright-prefix spdx-string-symbol --merge-copyrights --license";
 
-const withoutYarn = (files) =>
-  files.filter((file) => !file.includes("/.yarn/") && !file.startsWith(".yarn/"));
+const withoutYarn = (files) => files.filter((file) => !file.includes("/.yarn/") && !file.startsWith(".yarn/"));
 
-const withFiles = (command, files) =>
-  `${command} ${files
-    .map((file) => `"${file.replace(/"/g, "\\\"")}"`)
-    .join(" ")}`;
+const withFiles = (command, files) => `${command} ${files.map((file) => `"${file.replace(/"/g, '\\"')}"`).join(" ")}`;
 
 const run = (commands) => (files) => {
   const filtered = withoutYarn(files);
@@ -31,20 +27,14 @@ module.exports = {
   "**/*.json": run([`${reuse} 'CC0-1.0' --force-dot-license`, prettier]),
   "package.json": run([`${reuse} 'MIT' --force-dot-license`, prettier]),
 
-  "Makefile": run([`${reuse} 'MIT'`]),
+  Makefile: run([`${reuse} 'MIT'`]),
   "**/*.cjs": run([`${reuse} 'MIT'`]),
 
-  "{.config/git/hooks/**,**/*.sh}": run([
-    `${reuse} 'MIT' --style python`,
-    prettier,
-  ]),
+  "{.config/git/hooks/**,**/*.sh}": run([`${reuse} 'MIT' --style python`, prettier]),
 
   "**/*.{md,adoc}": run([`${reuse} 'CC-BY-NC-4.0'`, prettier]),
 
-  "**/*.{xml,yml,yaml,properties,toml,json5,js}": run([
-    `${reuse} 'CC0-1.0'`,
-    prettier,
-  ]),
+  "**/*.{xml,yml,yaml,properties,toml,json5,js}": run([`${reuse} 'CC0-1.0'`, prettier]),
   "**/*ignore": run([`${reuse} 'CC0-1.0'`, prettier]),
   ".editorconfig": run([`${reuse} 'CC0-1.0'`, prettier]),
   ".gitattributes": run([`${reuse} 'CC0-1.0'`, prettier]),
