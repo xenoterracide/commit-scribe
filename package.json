@@ -31,6 +31,6 @@
     "build": "tsc --build --verbose",
     "clean": "rimraf ./dist",
     "test": "vitest run",
-    "setup": "pip install -r requirements.txt && git config core.hooksPath .config/git/hooks"
+    "postinstall": "pip install -r requirements.txt && git config core.hooksPath .config/git/hooks"
   }
 }
