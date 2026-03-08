@@ -19,7 +19,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@github/copilot": "^0.0.391",
+    "@github/copilot": "^0.0.423",
     "clipanion": "^4.0.0-rc.4",
     "octokit": "^5.0.5"
   },
