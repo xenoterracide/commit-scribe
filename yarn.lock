@@ -33,70 +33,91 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@github/copilot-darwin-arm64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-darwin-arm64@npm:0.0.423"
+"@github/copilot-darwin-arm64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-darwin-arm64@npm:1.0.103"
   bin:
     copilot-darwin-arm64: copilot
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@github/copilot-darwin-x64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-darwin-x64@npm:0.0.423"
+"@github/copilot-darwin-x64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-darwin-x64@npm:1.0.103"
   bin:
     copilot-darwin-x64: copilot
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@github/copilot-linux-arm64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-linux-arm64@npm:0.0.423"
+"@github/copilot-linux-arm64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-linux-arm64@npm:1.0.103"
   bin:
     copilot-linux-arm64: copilot
-  conditions: os=linux & cpu=arm64
+  conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@github/copilot-linux-x64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-linux-x64@npm:0.0.423"
+"@github/copilot-linux-x64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-linux-x64@npm:1.0.103"
   bin:
     copilot-linux-x64: copilot
-  conditions: os=linux & cpu=x64
+  conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@github/copilot-win32-arm64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-win32-arm64@npm:0.0.423"
+"@github/copilot-linuxmusl-arm64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-linuxmusl-arm64@npm:1.0.103"
+  bin:
+    copilot-linuxmusl-arm64: copilot
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@github/copilot-linuxmusl-x64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-linuxmusl-x64@npm:1.0.103"
+  bin:
+    copilot-linuxmusl-x64: copilot
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@github/copilot-win32-arm64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-win32-arm64@npm:1.0.103"
   bin:
     copilot-win32-arm64: copilot.exe
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@github/copilot-win32-x64@npm:0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot-win32-x64@npm:0.0.423"
+"@github/copilot-win32-x64@npm:1.0.103":
+  version: 1.0.103
+  resolution: "@github/copilot-win32-x64@npm:1.0.103"
   bin:
     copilot-win32-x64: copilot.exe
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@github/copilot@npm:^0.0.423":
-  version: 0.0.423
-  resolution: "@github/copilot@npm:0.0.423"
+"@github/copilot@npm:^1.0.0":
+  version: 1.0.103
+  resolution: "@github/copilot@npm:1.0.103"
   dependencies:
-    "@github/copilot-darwin-arm64": "npm:0.0.423"
-    "@github/copilot-darwin-x64": "npm:0.0.423"
-    "@github/copilot-linux-arm64": "npm:0.0.423"
-    "@github/copilot-linux-x64": "npm:0.0.423"
-    "@github/copilot-win32-arm64": "npm:0.0.423"
-    "@github/copilot-win32-x64": "npm:0.0.423"
+    "@github/copilot-darwin-arm64": "npm:1.0.103"
+    "@github/copilot-darwin-x64": "npm:1.0.103"
+    "@github/copilot-linux-arm64": "npm:1.0.103"
+    "@github/copilot-linux-x64": "npm:1.0.103"
+    "@github/copilot-linuxmusl-arm64": "npm:1.0.103"
+    "@github/copilot-linuxmusl-x64": "npm:1.0.103"
+    "@github/copilot-win32-arm64": "npm:1.0.103"
+    "@github/copilot-win32-x64": "npm:1.0.103"
+    detect-libc: "npm:^2.1.2"
   dependenciesMeta:
     "@github/copilot-darwin-arm64":
       optional: true
@@ -106,13 +127,17 @@ __metadata:
       optional: true
     "@github/copilot-linux-x64":
       optional: true
+    "@github/copilot-linuxmusl-arm64":
+      optional: true
+    "@github/copilot-linuxmusl-x64":
+      optional: true
     "@github/copilot-win32-arm64":
       optional: true
     "@github/copilot-win32-x64":
       optional: true
   bin:
     copilot: npm-loader.js
-  checksum: 10c0/d5dab482fb8f9b895222c3fbbfec46e5f24caf43e81512956643ff0fb7aecbd64219186473b806d389c7a5ede8100a93b2960d59d03666cebe44cb38c0a7f2f9
+  checksum: 10c0/3fcdadb2715bdb4612e73426c572a1db2da91725f7c867136cb89ff941ff669f72e5801fc027a37ade4a812923240ee96726a395a54768ec9bbb397ea70ee3cc
   languageName: node
   linkType: hard
 
@@ -981,7 +1006,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "commit-scribe@workspace:."
   dependencies:
-    "@github/copilot": "npm:^0.0.423"
+    "@github/copilot": "npm:^1.0.0"
     "@types/node": "npm:^25.0.10"
     clipanion: "npm:^4.0.0-rc.4"
     git-conventional-commits: "npm:^2.8.0"
@@ -1017,7 +1042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-libc@npm:^2.0.3":
+"detect-libc@npm:^2.0.3, detect-libc@npm:^2.1.2":
   version: 2.1.2
   resolution: "detect-libc@npm:2.1.2"
   checksum: 10c0/acc675c29a5649fa1fb6e255f993b8ee829e510b6b56b0910666949c80c364738833417d0edb5f90e4e46be17228b0f2b66a010513984e18b15deeeac49369c4
